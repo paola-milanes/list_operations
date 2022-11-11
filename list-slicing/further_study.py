@@ -16,7 +16,7 @@ def custom_len(input_list):
 
     """
 
-    return 0
+    return len(input_list)
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -43,6 +43,7 @@ def custom_append(input_list, value):
         True
 
     """
+    input_list.append(value)
 
     pass
 
@@ -62,6 +63,8 @@ def custom_extend(input_list, second_list):
         True
 
     """
+    for i in second_list:
+        input_list.append(i)
 
     pass
 
@@ -80,6 +83,8 @@ def custom_insert(input_list, index, value):
         True
 
     """
+    input_list.insert(index, value)
+
 
     pass
 
@@ -99,6 +104,8 @@ def custom_remove(input_list, value):
         True
 
     """
+    input_list.remove(value)
+
 
     pass
 
@@ -118,8 +125,10 @@ def custom_pop(input_list):
         ['Jan', 'Feb']
 
     """
+    last = input_list[-1]
+    del input_list[-1]
 
-    return None
+    return last
 
 
 def custom_index(input_list, value):
@@ -134,8 +143,11 @@ def custom_index(input_list, value):
         1
 
     """
+    for i in range(len(input_list)-1):
+        if input_list[i] == value:
+            ind = i
 
-    return 0
+    return ind
 
 
 def custom_count(input_list, value):
@@ -150,8 +162,14 @@ def custom_count(input_list, value):
         2
 
     """
+    count = 0 
+    for i in input_list:
+        if i == value:
+            count += 1
 
-    return 0
+
+
+    return count
 
 
 def custom_reverse(input_list):
@@ -169,6 +187,13 @@ def custom_reverse(input_list):
         True
 
     """
+    # input_list = input_list[::-1]
+    return input_list[::-1]
+
+    # ls = []
+    # for i in input_list:
+
+
 
     pass
 
@@ -189,8 +214,14 @@ def custom_contains(input_list, value):
         True
 
     """
+    for i in input_list:
+        if i == value:
+            return True
+        
+    return False
 
-    return None
+
+    
 
 
 def custom_equality(some_list, another_list):
@@ -208,5 +239,8 @@ def custom_equality(some_list, another_list):
         False
 
     """
-
-    return None
+    for i in range(len(some_list)-1):
+        if some_list[i] != another_list[i]:
+            return False
+    return True
+    
