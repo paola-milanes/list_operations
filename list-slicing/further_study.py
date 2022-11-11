@@ -143,11 +143,15 @@ def custom_index(input_list, value):
         1
 
     """
-    for i in range(len(input_list)-1):
-        if input_list[i] == value:
-            ind = i
+    # for i in range(len(input_list)-1):
+    #     if input_list[i] == value:
+    #         ind = i
 
-    return ind
+    # return ind
+
+    for idx, itm in enumerate(input_list):
+        if itm == value:
+            return idx
 
 
 def custom_count(input_list, value):
@@ -187,15 +191,8 @@ def custom_reverse(input_list):
         True
 
     """
-    # input_list = input_list[::-1]
-    return input_list[::-1]
-
-    # ls = []
-    # for i in input_list:
-
-
-
-    pass
+    input_list = input_list[::-1]
+    return input_list
 
 
 def custom_contains(input_list, value):
@@ -244,3 +241,7 @@ def custom_equality(some_list, another_list):
             return False
     return True
     
+    for idx, itm in enumerate(some_list):
+        if itm != another_list[idx]:
+            return False
+    return True
